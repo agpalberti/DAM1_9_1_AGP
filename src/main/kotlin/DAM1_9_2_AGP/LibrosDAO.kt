@@ -33,13 +33,8 @@ fun main() {
 
             // Creamos la tabla o la vaciamos si ya existe
             librosDAO.prepareTable()
-
-            // Insertamos 4 usuarios
-            repeat(4)
-            {
-                librosDAO.insert(Book(id = "bk122", author = "El Parra", title = "La vida de Ricardo", genre = "Demiurgo", price = 20.00, publish_date = Date(2000,6,21), description = "Muchas gracias por leer mi libro" ))
-            }  // Buscar un usuario
-            var b = librosDAO.selectById("1")
+            librosDAO.insert(Book(id = "bk123", author = "El Parra", title = "La vida de Ricardo", genre = "Demiurgo", price = 20.00, publish_date = Date(2000,6,21), description = "Muchas gracias por leer mi libro" )) // Buscar un usuario
+            val b = librosDAO.selectById("1")
 
             // Si ha conseguido el usuario, por tanto no es nulo, entonces
             // actualizar el usuario
