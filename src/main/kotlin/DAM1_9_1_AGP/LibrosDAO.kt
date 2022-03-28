@@ -1,6 +1,9 @@
+package DAM1_9_1_AGP
+
+import Book
 import java.sql.DriverManager
 
-class CatalogoLibrosDAO(jdbcUrl:String, user:String, password:String) {
+class LibrosDAO(jdbcUrl:String, user:String, password:String) {
     private val connection = DriverManager.getConnection(jdbcUrl, user, password)
     private val books = mutableListOf<Book>()
 
@@ -16,7 +19,7 @@ class CatalogoLibrosDAO(jdbcUrl:String, user:String, password:String) {
             val publishDate = result.getDate("publish_date")
             val description = result.getString("description")
 
-            books.add(Book(id,author, title, genre, price, publishDate, description))
+            books.add(Book(id, author, title, genre, price, publishDate, description))
         }
     }
 

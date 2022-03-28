@@ -2,7 +2,7 @@ import java.util.*
 
 data class Book(
     val id: String,
-    val autor: String,
+    var author: String,
     val title: String,
     val genre: String,
     val price: Double,
